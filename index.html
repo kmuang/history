@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> History Timelines </title>  
+<link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  .slide-left { transform: translateX(-50px); opacity: 0; transition: all 0.7s ease-out; }
+  .slide-right { transform: translateX(50px); opacity: 0; transition: all 0.7s ease-out; }
+  .slide-in { transform: translateX(0); opacity: 1; }
+
+  .timeline-line { position: absolute; left: 50%; transform: translateX(-50%); width: 4px; height: 100%; background: rgba(0,0,0,0.1); }
+
+  .timeline-dot { border-radius: 50%; border: 4px solid white; width: 1.5rem; height: 1.5rem; box-shadow: 0 0 8px rgba(0,0,0,0.3); }
+
+  /* Line colors */
+  .crusades-line { background: linear-gradient(to bottom, rgba(220,38,38,0.2), rgba(220,38,38,0.6), rgba(220,38,38,0.2)); }
+  .us-line { background: linear-gradient(to bottom, rgba(16,185,129,0.2), rgba(16,185,129,0.6), rgba(16,185,129,0.2)); }
+  .apple-line { background: linear-gradient(to bottom, rgba(75,85,99,0.2), rgba(75,85,99,0.6), rgba(75,85,99,0.2)); }
+  .bible-line { background: linear-gradient(to bottom, rgba(234,179,8,0.2), rgba(234,179,8,0.6), rgba(234,179,8,0.2)); }
+  .jesus-line { background: linear-gradient(to bottom, rgba(139,92,246,0.2), rgba(139,92,246,0.6), rgba(139,92,246,0.2)); }
+  .earth-line { background: linear-gradient(to bottom, rgba(14,165,233,0.2), rgba(14,165,233,0.6), rgba(14,165,233,0.2)); }
+  .digital-line { background: linear-gradient(to bottom, rgba(129,140,248,0.2), rgba(129,140,248,0.6), rgba(129,140,248,0.2)); }
+  .industrial-line { background: linear-gradient(to bottom, rgba(249,115,22,0.2), rgba(249,115,22,0.6), rgba(249,115,22,0.2)); }
+  .ww1-line { background: linear-gradient(to bottom, rgba(234,88,12,0.2), rgba(234,88,12,0.6), rgba(234,88,12,0.2)); }
+  .ww2-line { background: linear-gradient(to bottom, rgba(59,130,246,0.2), rgba(59,130,246,0.6), rgba(59,130,246,0.2)); }
+  .vietnam-line { background: linear-gradient(to bottom, rgba(5,150,105,0.2), rgba(5,150,105,0.6), rgba(5,150,105,0.2)); }
+  .korean-line { background: linear-gradient(to bottom, rgba(244,63,94,0.2), rgba(244,63,94,0.6), rgba(244,63,94,0.2)); }
+  .british-line { background: linear-gradient(to bottom, rgba(107,33,168,0.2), rgba(107,33,168,0.6), rgba(107,33,168,0.2)); }
+  .myanmar-line { background: linear-gradient(to bottom, rgba(34,197,94,0.2), rgba(34,197,94,0.6), rgba(34,197,94,0.2)); }
+
+  /* Dot colors */
+  .crusades-dot { background-color: #dc2626; }
+  .us-dot { background-color: #10b981; }
+  .apple-dot { background-color: #4b5563; }
+  .bible-dot { background-color: #eab308; }
+  .jesus-dot { background-color: #8b5cf6; }
+  .earth-dot { background-color: #0ea5e9; }
+  .digital-dot { background-color: #818cf8; }
+  .industrial-dot { background-color: #f97316; }
+  .ww1-dot { background-color: #ea580c; }
+  .ww2-dot { background-color: #3b82f6; }
+  .vietnam-dot { background-color: #059669; }
+  .korean-dot { background-color: #f43f5e; }
+  .british-dot { background-color: #6b21a8; }
+  .myanmar-dot { background-color: #22c55e; }
+</style>
+</head>
+<body class="bg-gray-100 p-4">
+
+<h1 class="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-8">🌍 Major Timelines</h1>
+
+<div class="flex flex-wrap justify-center gap-3 mb-8">
+  <button onclick="showGroup('crusades')" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">Crusades</button>
+  <button onclick="showGroup('us')" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">US History</button>
+  <button onclick="showGroup('apple')" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">Apple</button>
+  <button onclick="showGroup('bible')" class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition">Bible</button>
+  <button onclick="showGroup('jesus')" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">Jesus</button>
+  <button onclick="showGroup('earth')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Earth</button>
+  <button onclick="showGroup('digital')" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Digital Revolution</button>
+  <button onclick="showGroup('industrial')" class="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700 transition">Industrial Revolution</button>
+  <button onclick="showGroup('ww1')" class="bg-red-800 text-white px-4 py-2 rounded hover:bg-red-900 transition">WW1</button>
+  <button onclick="showGroup('ww2')" class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-900 transition">WW2</button>
+  <button onclick="showGroup('vietnam')" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 transition">Vietnam War</button>
+  <button onclick="showGroup('korean')" class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition">Korean War</button>
+  <button onclick="showGroup('british')" class="bg-purple-800 text-white px-4 py-2 rounded hover:bg-purple-900 transition">British Colony</button>
+  <button onclick="showGroup('myanmar')" class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 transition">British in Myanmar</button>
+</div>
+
+<div id="timelines-container"></div>
+
+<script>
+const timelines = {
+  crusades: [
+    {year:"1096-1099",desc:"First Crusade captures Jerusalem",img:"https://source.unsplash.com/400x200/?crusade,medieval1"},
+    {year:"1147-1149",desc:"Second Crusade",img:"https://source.unsplash.com/400x200/?crusade,medieval2"},
+    {year:"1189-1192",desc:"Third Crusade led by Richard the Lionheart",img:"https://source.unsplash.com/400x200/?crusade,medieval3"},
+    {year:"1202-1204",desc:"Fourth Crusade attacks Constantinople",img:"https://source.unsplash.com/400x200/?crusade,medieval4"},
+    {year:"1217-1221",desc:"Fifth Crusade",img:"https://source.unsplash.com/400x200/?crusade,medieval5"},
+    {year:"1228-1229",desc:"Sixth Crusade",img:"https://source.unsplash.com/400x200/?crusade,medieval6"},
+    {year:"1248-1254",desc:"Seventh Crusade led by Louis IX",img:"https://source.unsplash.com/400x200/?crusade,medieval7"},
+    {year:"1270",desc:"Eighth Crusade",img:"https://source.unsplash.com/400x200/?crusade,medieval8"}
+  ],
+  us: [
+    {year:"1607",desc:"Jamestown founded",img:"https://source.unsplash.com/400x200/?jamestown,us"},
+    {year:"1776",desc:"Declaration of Independence",img:"https://source.unsplash.com/400x200/?independence,us"},
+    {year:"1787",desc:"US Constitution signed",img:"https://source.unsplash.com/400x200/?constitution,us"},
+    {year:"1861-1865",desc:"American Civil War",img:"https://source.unsplash.com/400x200/?civilwar,us"},
+    {year:"1920",desc:"Women get voting rights",img:"https://source.unsplash.com/400x200/?women,voting,us"},
+    {year:"1941-1945",desc:"US in WWII",img:"https://source.unsplash.com/400x200/?ww2,us"},
+    {year:"1969",desc:"Apollo 11 Moon landing",img:"https://source.unsplash.com/400x200/?apollo11,us"},
+    {year:"2008",desc:"Barack Obama elected president",img:"https://source.unsplash.com/400x200/?obama,us"}
+  ],
+  apple: [
+    {year:"1976",desc:"Apple founded",img:"https://source.unsplash.com/400x200/?apple,computer1"},
+    {year:"1977",desc:"Apple II launched",img:"https://source.unsplash.com/400x200/?apple,computer2"},
+    {year:"1984",desc:"Macintosh released",img:"https://source.unsplash.com/400x200/?macintosh,apple"},
+    {year:"1997",desc:"Steve Jobs returns",img:"https://source.unsplash.com/400x200/?stevejobs,apple"},
+    {year:"2001",desc:"iPod released",img:"https://source.unsplash.com/400x200/?ipod,apple"},
+    {year:"2007",desc:"iPhone launched",img:"https://source.unsplash.com/400x200/?iphone,apple"},
+    {year:"2010",desc:"iPad released",img:"https://source.unsplash.com/400x200/?ipad,apple"},
+    {year:"2020",desc:"Apple reaches $2T valuation",img:"https://source.unsplash.com/400x200/?apple,finance"}
+  ],
+  bible: [
+    {year:"c.2000 BC",desc:"Abraham's era",img:"https://source.unsplash.com/400x200/?abraham,bible"},
+    {year:"c.1500 BC",desc:"Moses leads Exodus",img:"https://source.unsplash.com/400x200/?moses,bible"},
+    {year:"c.1000 BC",desc:"King David reigns",img:"https://source.unsplash.com/400x200/?kingdavid,bible"},
+    {year:"c.950 BC",desc:"Solomon builds temple",img:"https://source.unsplash.com/400x200/?solomon,bible"},
+    {year:"c.722 BC",desc:"Fall of Israel",img:"https://source.unsplash.com/400x200/?israel,bible"},
+    {year:"c.586 BC",desc:"Babylonian exile",img:"https://source.unsplash.com/400x200/?babylon,bible"},
+    {year:"c.4 BC",desc:"Birth of Jesus",img:"https://source.unsplash.com/400x200/?jesus,bible"},
+    {year:"c.70 AD",desc:"Destruction of Jerusalem Temple",img:"https://source.unsplash.com/400x200/?jerusalem,bible"}
+  ], 
+  ww1: [
+    {year:"1914",desc:"Assassination of Archduke Franz Ferdinand",img:"https://source.unsplash.com/400x200/?ww1,1914"},
+    {year:"1915",desc:"Second Battle of Ypres",img:"https://source.unsplash.com/400x200/?ww1,1915"},
+    {year:"1916",desc:"Battle of the Somme",img:"https://source.unsplash.com/400x200/?ww1,1916"},
+    {year:"1917",desc:"US enters the war",img:"https://source.unsplash.com/400x200/?ww1,1917"},
+    {year:"1918",desc:"Armistice signed",img:"https://source.unsplash.com/400x200/?ww1,1918"},
+    {year:"1919",desc:"Treaty of Versailles",img:"https://source.unsplash.com/400x200/?ww1,1919"},
+    {year:"1920",desc:"League of Nations established",img:"https://source.unsplash.com/400x200/?leagueofnations,ww1"},
+    {year:"1921",desc:"War reparations imposed on Germany",img:"https://source.unsplash.com/400x200/?germany,ww1"}
+  ], 
+  ww2: [
+    {year:"1939",desc:"Germany invades Poland",img:"https://source.unsplash.com/400x200/?ww2,1939"},
+    {year:"1940",desc:"Fall of France",img:"https://source.unsplash.com/400x200/?ww2,1940"},
+    {year:"1941",desc:"Pearl Harbor attack",img:"https://source.unsplash.com/400x200/?ww2,1941"},
+    {year:"1942",desc:"Battle of Midway",img:"https://source.unsplash.com/400x200/?ww2,1942"},
+    {year:"1944",desc:"D-Day Normandy landings",img:"https://source.unsplash.com/400x200/?ww2,1944"},
+    {year:"1945",desc:"Germany surrenders",img:"https://source.unsplash.com/400x200/?ww2,1945a"},
+    {year:"1945",desc:"Atomic bombs on Hiroshima and Nagasaki",img:"https://source.unsplash.com/400x200/?ww2,1945b"},
+    {year:"1946",desc:"United Nations founded",img:"https://source.unsplash.com/400x200/?unitednations,ww2"}
+  ],
+  jesus: [
+    {year:"c.4 BC",desc:"Birth of Jesus in Bethlehem",img:"https://source.unsplash.com/400x200/?jesus,birth"},
+    {year:"c.6 AD",desc:"Jesus' family flees to Egypt",img:"https://source.unsplash.com/400x200/?jesus,egypt"},
+    {year:"c.26 AD",desc:"Jesus begins his ministry",img:"https://source.unsplash.com/400x200/?jesus,ministry"},
+    {year:"c.30 AD",desc:"Crucifixion of Jesus",img:"https://source.unsplash.com/400x200/?jesus,crucifixion"},
+    {year:"c.30 AD",desc:"Resurrection of Jesus",img:"https://source.unsplash.com/400x200/?jesus,resurrection"},
+    {year:"c.33 AD",desc:"Ascension of Jesus",img:"https://source.unsplash.com/400x200/?jesus,ascension"},
+    {year:"c.50 AD",desc:"Paul's missionary journeys",img:"https://source.unsplash.com/400x200/?paul,missionary"},
+    {year:"c.70 AD",desc:"Destruction of Jerusalem Temple",img:"https://source.unsplash.com/400x200/?jerusalem,temple"}
+  ],
+  earth: [
+    {year:"c.4.5 billion years ago",desc:"Formation of Earth",img:"https://source.unsplash.com/400x200/?earth,formation"},
+    {year:"c.3.5 billion years ago",desc:"First life forms appear",img:"https://source.unsplash.com/400x200/?earth,life"},
+    {year:"c.600 million years ago",desc:"Cambrian Explosion",img:"https://source.unsplash.com/400x200/?cambrian,explosion"},
+    {year:"c.250 million years ago",desc:"Permian-Triassic extinction",img:"https://source.unsplash.com/400x200/?extinction,event"},
+    {year:"c.65 million years ago",desc:"Dinosaur extinction",img:"https://source.unsplash.com/400x200/?dinosaur,extinction"},
+    {year:"c.2 million years ago",desc:"First humans appear",img:"https://source.unsplash.com/400x200/?earlyhumans,earth"},
+    {year:"c.10,000 years ago",desc:"Agricultural revolution",img:"https://source.unsplash.com/400x200/?agriculture,revolution"},
+    {year:"c.200 years ago",desc:"Industrial revolution begins",img:"https://source.unsplash.com/400x200/?industrial,revolution"}
+  ],
+  digital: [
+    {year:"1940s",desc:"Development of first computers",img:"https://source.unsplash.com/400x200/?early,computers"},
+    {year:"1969",desc:"ARPANET established",img:"https://source.unsplash.com/400x200/?arpanet,internet"},
+    {year:"1971",desc:"Invention of the microprocessor",img:"https://source.unsplash.com/400x200/?microprocessor,technology"},
+    {year:"1983",desc:"Domain Name System (DNS) created",img:"https://source.unsplash.com/400x200/?dns,internet"},
+    {year:"1991",desc:"World Wide Web launched",img:"https://source.unsplash.com/400x200/?worldwideweb,internet"},
+    {year:"2004",desc:"Facebook founded",img:"https://source.unsplash.com/400x200/?facebook,socialmedia"},
+    {year:"2007",desc:"iPhone released",img:"https://source.unsplash.com/400x200/?iphone,technology"},  
+    {year:"2010s",desc:"Rise of cloud computing",img:"https://source.unsplash.com/400x200/?cloud,computing"}
+  ],
+  industrial: [
+    {year:"1760s",desc:"Start of the Industrial Revolution",img:"https://source.unsplash.com/400x200/?industrial,revolution1"},
+    {year:"1784",desc:"Invention of the power loom",img:"https://source.unsplash.com/400x200/?powerloom,industrial"},
+    {year:"1807",desc:"First successful steamboat",img:"https://source.unsplash.com/400x200/?steamboat,industrial"},
+    {year:"1837",desc:"Invention of the telegraph",img:"https://source.unsplash.com/400x200/?telegraph,industrial"},
+    {year:"1870",desc:"Start of the Second Industrial Revolution",img:"https://source.unsplash.com/400x200/?industrial,revolution2"},
+    {year:"1913",desc:"Introduction of assembly line production",img:"https://source.unsplash.com/400x200/?assembly,line,industrial"}, 
+    {year:"1920s",desc:"Mass production of automobiles",img:"https://source.unsplash.com/400x200/?automobile,industrial"},
+    {year:"1940s",desc:"Advancements in manufacturing during WWII",img:"https://source.unsplash.com/400x200/?ww2,manufacturing"}    
+  ], 
+  vietnam: [
+    {year:"1955",desc:"Start of Vietnam War",img:"https://source.unsplash.com/400x200/?vietnam,war1"},
+    {year:"1964",desc:"Gulf of Tonkin incident",img:"https://source.unsplash.com/400x200/?gulfoftonkin,vietnam"},
+    {year:"1968",desc:"Tet Offensive",img:"https://source.unsplash.com/400x200/?tetoffensive,vietnam"},
+    {year:"1970",desc:"Cambodia invasion",img:"https://source.unsplash.com/400x200/?cambodia,vietnam"},
+    {year:"1973",desc:"Paris Peace Accords signed",img:"https://source.unsplash.com/400x200/?parispeace,vietnam"},
+    {year:"1975",desc:"Fall of Saigon",img:"https://source.unsplash.com/400x200/?saigon,vietnam"},
+    {year:"1986",desc:"Economic reforms (Đổi Mới)",img:"https://source.unsplash.com/400x200/?economicreform,vietnam"},
+    {year:"1995",desc:"US-Vietnam diplomatic relations restored",img:"https://source.unsplash.com/400x200/?usvietnam,diplomacy"}
+  ], 
+  korean: [
+    {year:"1950",desc:"Start of Korean War",img:"https://source.unsplash.com/400x200/?korean,war1"},
+    {year:"1950",desc:"North Korea invades South Korea",img:"https://source.unsplash.com/400x200/?northkorea,southkorea"},
+    {year:"1951",desc:"Chinese forces enter the war",img:"https://source.unsplash.com/400x200/?china,koreanwar"},
+    {year:"1953",desc:"Armistice signed",img:"https://source.unsplash.com/400x200/?koreanwar,armistice"},
+    {year:"1960s",desc:"South Korea's economic development",img:"https://source.unsplash.com/400x200/?southkorea,economy"},
+    {year:"1988",desc:"Seoul hosts Summer Olympics",img:"https://source.unsplash.com/400x200/?seoul,olympics"},
+    {year:"1998",desc:"Kim Dae-jung elected president",img:"https://source.unsplash.com/400x200/?kimdaejung,southkorea"},
+    {year:"2000",desc:"First Inter-Korean Summit",img:"https://source.unsplash.com/400x200/?interkorean,summit"}
+  ],
+  british: [
+    {year:"1607",desc:"Jamestown founded",img:"https://source.unsplash.com/400x200/?jamestown,british"},
+    {year:"1620",desc:"Pilgrims land at Plymouth",img:"https://source.unsplash.com/400x200/?plymouth,british"},
+    {year:"1757",desc:"Battle of Plassey",img:"https://source.unsplash.com/400x200/?plassey,british"},
+    {year:"1776",desc:"American Declaration of Independence",img:"https://source.unsplash.com/400x200/?declarationofindependence,british"},
+    {year:"1805",desc:"Battle of Trafalgar",img:"https://source.unsplash.com/400x200/?trafalgar,british"},
+    {year:"1837",desc:"Victoria becomes queen",img:"https://source.unsplash.com/400x200/?queen,victoria"},
+    {year:"1914",desc:"Start of World War I",img:"https://source.unsplash.com/400x200/?ww1,british"},
+    {year:"1945",desc:"End of World War II",img:"https://source.unsplash.com/400x200/?ww2,british"}
+  ],    
+    myanmar: [
+        {year:"1824",desc:"First Anglo-Burmese War begins",img:"https://source.unsplash.com/400x200/?angloburmese,war1"},
+        {year:"1826",desc:"Treaty of Yandabo signed",img:"https://source.unsplash.com/400x200/?yandabo,treaty"},
+        {year:"1852",desc:"Second Anglo-Burmese War",img:"https://source.unsplash.com/400x200/?angloburmese,war2"},
+        {year:"1885",desc:"Third Anglo-Burmese War",img:"https://source.unsplash.com/400x200/?angloburmese,war3"},
+        {year:"1948",desc:"Independence from Britain",img:"https://source.unsplash.com/400x200/?myanmar,independence"},
+        {year:"1962",desc:"Military coup in Myanmar",img:"https://source.unsplash.com/400x200/?myanmar,coup"},
+        {year:"2011",desc:"Start of political reforms",img:"https://source.unsplash.com/400x200/?myanmar,reforms"},
+        {year:"2021",desc:"Military coup d'état",img:"https://source.unsplash.com/400x200/?myanmar,coup2021"}
+    ], 
+
+
+  // You can continue adding the remaining timelines in the same format (jesus, earth, digital, industrial, ww1, ww2, vietnam, korean, british, myanmar)
+};
+
+const colors = {
+  crusades:'crusades', us:'us', apple:'apple', bible:'bible', jesus:'jesus',
+  earth:'earth', digital:'digital', industrial:'industrial',
+  ww1:'ww1', ww2:'ww2', vietnam:'vietnam', korean:'korean', british:'british', myanmar:'myanmar'
+};
+
+const timelinesContainer = document.getElementById("timelines-container");
+
+Object.keys(timelines).forEach(group=>{
+  const groupDiv = document.createElement("div");
+  groupDiv.className="timeline-group mb-16 hidden";
+  groupDiv.setAttribute("data-group",group);
+
+  const h2 = document.createElement("h2");
+  h2.className="text-2xl font-bold text-center text-gray-700 mb-6";
+  h2.textContent=group.charAt(0).toUpperCase()+group.slice(1)+" Timeline";
+  groupDiv.appendChild(h2);
+
+  const innerDiv = document.createElement("div");
+  innerDiv.className="relative max-w-6xl mx-auto space-y-12";
+  const lineDiv = document.createElement("div");
+  lineDiv.className=`timeline-line ${colors[group]}-line hidden md:block`;
+  innerDiv.appendChild(lineDiv);
+
+  timelines[group].forEach((event,index)=>{
+    const sideClass = index%2===0?"md:flex-row":"md:flex-row-reverse";
+    const card = document.createElement("div");
+    card.className=`timeline-card flex flex-col ${sideClass} items-center slide-left`;
+    card.innerHTML=`
+      <div class="md:w-5/12 ${index%2===0?'md:text-right':'md:text-left'}">
+        <div class="bg-white rounded-xl shadow-lg p-4 hover:shadow-2xl transition h-full flex flex-col justify-between">
+          <h3 class="text-xl font-bold">${event.year}</h3>
+          <p class="text-gray-600 mt-2">${event.desc}</p>
+          <img src="${event.img}" class="mt-2 w-full h-40 object-cover rounded" alt="${event.year}">
+        </div>
+      </div>
+      <div class="md:w-2/12 flex justify-center z-10">
+        <div class="timeline-dot ${colors[group]}-dot"></div>
+      </div>
+      <div class="md:w-5/12 hidden md:block"></div>
+    `;
+    innerDiv.appendChild(card);
+  });
+
+  groupDiv.appendChild(innerDiv);
+  timelinesContainer.appendChild(groupDiv);
+});
+
+function showGroup(group){
+  document.querySelectorAll('.timeline-group').forEach(g=>g.classList.add('hidden'));
+  document.querySelector(`.timeline-group[data-group="${group}"]`).classList.remove('hidden');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Intersection Observer for slide-in
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add('slide-in');
+  });
+},{threshold:0.2});
+
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.timeline-card').forEach(card=>observer.observe(card));
+});
+</script>
+<footer class="bg-gray-800 text-white py-4">
+  <div class="container mx-auto text-center">
+    <p>&copy; 2025 History Timelines. All rights reserved. </p>
+    <p>Developed by Noel Muang </p>
+  </div>
+</footer>
+</body>
+</html>
