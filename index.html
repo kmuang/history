@@ -21,15 +21,12 @@
   .apple-line { background: linear-gradient(to bottom, rgba(75,85,99,0.2), rgba(75,85,99,0.6), rgba(75,85,99,0.2)); }
   .bible-line { background: linear-gradient(to bottom, rgba(234,179,8,0.2), rgba(234,179,8,0.6), rgba(234,179,8,0.2)); }
   .jesus-line { background: linear-gradient(to bottom, rgba(139,92,246,0.2), rgba(139,92,246,0.6), rgba(139,92,246,0.2)); }
-  .earth-line { background: linear-gradient(to bottom, rgba(14,165,233,0.2), rgba(14,165,233,0.6), rgba(14,165,233,0.2)); }
   .digital-line { background: linear-gradient(to bottom, rgba(129,140,248,0.2), rgba(129,140,248,0.6), rgba(129,140,248,0.2)); }
   .industrial-line { background: linear-gradient(to bottom, rgba(249,115,22,0.2), rgba(249,115,22,0.6), rgba(249,115,22,0.2)); }
   .ww1-line { background: linear-gradient(to bottom, rgba(234,88,12,0.2), rgba(234,88,12,0.6), rgba(234,88,12,0.2)); }
   .ww2-line { background: linear-gradient(to bottom, rgba(59,130,246,0.2), rgba(59,130,246,0.6), rgba(59,130,246,0.2)); }
   .vietnam-line { background: linear-gradient(to bottom, rgba(5,150,105,0.2), rgba(5,150,105,0.6), rgba(5,150,105,0.2)); }
   .korean-line { background: linear-gradient(to bottom, rgba(244,63,94,0.2), rgba(244,63,94,0.6), rgba(244,63,94,0.2)); }
-  .british-line { background: linear-gradient(to bottom, rgba(107,33,168,0.2), rgba(107,33,168,0.6), rgba(107,33,168,0.2)); }
-  .myanmar-line { background: linear-gradient(to bottom, rgba(34,197,94,0.2), rgba(34,197,94,0.6), rgba(34,197,94,0.2)); }
 
   /* Dot colors */
   .crusades-dot { background-color: #dc2626; }
@@ -37,15 +34,12 @@
   .apple-dot { background-color: #4b5563; }
   .bible-dot { background-color: #eab308; }
   .jesus-dot { background-color: #8b5cf6; }
-  .earth-dot { background-color: #0ea5e9; }
   .digital-dot { background-color: #818cf8; }
   .industrial-dot { background-color: #f97316; }
   .ww1-dot { background-color: #ea580c; }
   .ww2-dot { background-color: #3b82f6; }
   .vietnam-dot { background-color: #059669; }
   .korean-dot { background-color: #f43f5e; }
-  .british-dot { background-color: #6b21a8; }
-  .myanmar-dot { background-color: #22c55e; }
 </style>
 </head>
 <body class="bg-gray-100 p-4">
@@ -58,15 +52,12 @@
   <button onclick="showGroup('apple')" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">Apple</button>
   <button onclick="showGroup('bible')" class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition">Bible</button>
   <button onclick="showGroup('jesus')" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">Jesus</button>
-  <button onclick="showGroup('earth')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Earth</button>
   <button onclick="showGroup('digital')" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Digital Revolution</button>
   <button onclick="showGroup('industrial')" class="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700 transition">Industrial Revolution</button>
   <button onclick="showGroup('ww1')" class="bg-red-800 text-white px-4 py-2 rounded hover:bg-red-900 transition">WW1</button>
   <button onclick="showGroup('ww2')" class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-900 transition">WW2</button>
   <button onclick="showGroup('vietnam')" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 transition">Vietnam War</button>
   <button onclick="showGroup('korean')" class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition">Korean War</button>
-  <button onclick="showGroup('british')" class="bg-purple-800 text-white px-4 py-2 rounded hover:bg-purple-900 transition">British Colony</button>
-  <button onclick="showGroup('myanmar')" class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 transition">British in Myanmar</button>
 </div>
 
 <div id="timelines-container"></div>
@@ -74,154 +65,125 @@
 <script>
 const timelines = {
   crusades: [
-    {year:"1096-1099",desc:"First Crusade captures Jerusalem",img:"https://source.unsplash.com/400x200/?crusade,medieval1"},
-    {year:"1147-1149",desc:"Second Crusade",img:"https://source.unsplash.com/400x200/?crusade,medieval2"},
-    {year:"1189-1192",desc:"Third Crusade led by Richard the Lionheart",img:"https://source.unsplash.com/400x200/?crusade,medieval3"},
-    {year:"1202-1204",desc:"Fourth Crusade attacks Constantinople",img:"https://source.unsplash.com/400x200/?crusade,medieval4"},
-    {year:"1217-1221",desc:"Fifth Crusade",img:"https://source.unsplash.com/400x200/?crusade,medieval5"},
-    {year:"1228-1229",desc:"Sixth Crusade",img:"https://source.unsplash.com/400x200/?crusade,medieval6"},
-    {year:"1248-1254",desc:"Seventh Crusade led by Louis IX",img:"https://source.unsplash.com/400x200/?crusade,medieval7"},
-    {year:"1270",desc:"Eighth Crusade",img:"https://source.unsplash.com/400x200/?crusade,medieval8"}
+    {year:"1096-1099",desc:"First Crusade captures Jerusalem",img:"https://www.worldhistory.org/img/c/p/1200x627/8992.jpg"},
+    {year:"1147-1149",desc:"Second Crusade",img:"https://miro.medium.com/1*eikKU9zomgekT-0jinzxnA.jpeg"},
+    {year:"1189-1192",desc:"Third Crusade led by Richard the Lionheart",img:"https://www.thoughtco.com/thmb/QzIc_R7kHrKZ20YpPJvJ2QtROUw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/siege-of-acre-large-57c4ba205f9b5855e5f70d6b.jpg"},
+    {year:"1202-1204",desc:"Fourth Crusade attacks Constantinople",img:"https://upload.wikimedia.org/wikipedia/commons/0/0a/ConquestOfConstantinopleByTheCrusadersIn1204.jpg"},
+    {year:"1217-1221",desc:"Fifth Crusade",img:"https://storiespreschool.com/images/fifth_crusade0.jpg"},
+    {year:"1228-1229",desc:"Sixth Crusade",img:"https://www.worldhistory.org/img/c/p/360x202/9165.jpg?v=1743628804"},
+    {year:"1248-1254",desc:"Seventh Crusade led by Louis IX",img:"https://warfarehistorynetwork.com/wp-content/uploads/2015/11/M-Sum23-7th-Crusade-1-e1685988499490.jpg"},
+    {year:"1270",desc:"Eighth Crusade",img:"https://www.worldhistory.org/img/c/p/1200x900/9208.jpg"}
   ],
   us: [
-    {year:"1607",desc:"Jamestown founded",img:"https://source.unsplash.com/400x200/?jamestown,us"},
-    {year:"1776",desc:"Declaration of Independence",img:"https://source.unsplash.com/400x200/?independence,us"},
-    {year:"1787",desc:"US Constitution signed",img:"https://source.unsplash.com/400x200/?constitution,us"},
-    {year:"1861-1865",desc:"American Civil War",img:"https://source.unsplash.com/400x200/?civilwar,us"},
-    {year:"1920",desc:"Women get voting rights",img:"https://source.unsplash.com/400x200/?women,voting,us"},
-    {year:"1941-1945",desc:"US in WWII",img:"https://source.unsplash.com/400x200/?ww2,us"},
-    {year:"1969",desc:"Apollo 11 Moon landing",img:"https://source.unsplash.com/400x200/?apollo11,us"},
-    {year:"2008",desc:"Barack Obama elected president",img:"https://source.unsplash.com/400x200/?obama,us"}
+    {year:"1607",desc:"Jamestown founded",img:"https://cdn.britannica.com/80/83680-050-4494A347/Jamestown-Fort-Virginia-1608.jpg"},
+    {year:"1776",desc:"Declaration of Independence",img:"https://teachingamericanhistory.org/content/uploads/2021/09/3694394069_2d41fa536e_b-1.jpg"},
+    {year:"1787",desc:"US Constitution signed",img:"https://mtv-drupal-assets.s3.amazonaws.com/files/resources/washington_constitutional_convention_1787.jpg?VersionId=FLRNVAQyvTknzSvnO0WMDA95mjSVoCnD"},
+    {year:"1861-1865",desc:"American Civil War",img:"https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_3840,h_1920,g_auto/dpr_auto/f_auto/q_auto:eco/v1/civil-war-gettyimages-3427284?_a=BAVAZGID0"},
+    {year:"1920",desc:"Women get voting rights",img:"https://res.cloudinary.com/aenetworks/image/upload/c_fill,w_1200,h_630,g_auto/dpr_auto/f_auto/q_auto:eco/v1/women-suffrage-gettyimages-514892136"},
+    {year:"1941-1945",desc:"US in WWII",img:"https://angrystaffofficer.com/wp-content/uploads/2017/04/befa7914bd3b35d045806526bf8a6591.jpg"},
+    {year:"1969",desc:"Apollo 11 Moon landing",img:"https://i0.wp.com/www.defensemedianetwork.com/wp-content/uploads/2019/07/Apollo-15-machines.jpg?resize=1024%2C1032&ssl=1"},
+    {year:"2008",desc:"Barack Obama elected president",img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Official_portrait_of_Barack_Obama.jpg/250px-Official_portrait_of_Barack_Obama.jpg"}
   ],
   apple: [
-    {year:"1976",desc:"Apple founded",img:"https://source.unsplash.com/400x200/?apple,computer1"},
-    {year:"1977",desc:"Apple II launched",img:"https://source.unsplash.com/400x200/?apple,computer2"},
-    {year:"1984",desc:"Macintosh released",img:"https://source.unsplash.com/400x200/?macintosh,apple"},
-    {year:"1997",desc:"Steve Jobs returns",img:"https://source.unsplash.com/400x200/?stevejobs,apple"},
-    {year:"2001",desc:"iPod released",img:"https://source.unsplash.com/400x200/?ipod,apple"},
-    {year:"2007",desc:"iPhone launched",img:"https://source.unsplash.com/400x200/?iphone,apple"},
-    {year:"2010",desc:"iPad released",img:"https://source.unsplash.com/400x200/?ipad,apple"},
-    {year:"2020",desc:"Apple reaches $2T valuation",img:"https://source.unsplash.com/400x200/?apple,finance"}
+    {year:"1976",desc:"Apple founded",img:"https://www.mercurynews.com/wp-content/uploads/2016/08/20160326__SJM-APPLEPLAY-0326-011.jpg?w=1800&resize=1800,1800"},
+    {year:"1977",desc:"Apple II launched",img:"https://ids.si.edu/ids/deliveryService?id=NMAH-91-14186&max=800"},
+    {year:"1984",desc:"Macintosh released",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5pPWGrVYlM3TxbA5qDDQwbe4ThLkESE63pA&s"},
+    {year:"1997",desc:"Steve Jobs returns",img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg/1200px-Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg"},
+    {year:"2001",desc:"iPod released",img:"https://www.cnet.com/a/img/resize/6bf0aca63fd12036cd4fed207b9809ae5e48a844/hub/2007/09/12/1ab08750-cbf2-11e2-9a4a-0291187b029a/ipod-timeline-crave-1.jpg?auto=webp&width=1200"},
+    {year:"2007",desc:"iPhone launched",img:"https://www.macworld.com/wp-content/uploads/2024/10/original-iphone-2007-1.jpg?quality=50&strip=all"},
+    {year:"2010",desc:"iPad released",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEsURTf7szsbjiCu7Wk1rT5FQovRYXc0yaQQ&s"},
+    {year:"2020",desc:"Apple reaches $2T valuation",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSilSLwfMyMUWH9_7rckmUPJVyU2f_wjvNAZw&s"}
   ],
   bible: [
-    {year:"c.2000 BC",desc:"Abraham's era",img:"https://source.unsplash.com/400x200/?abraham,bible"},
-    {year:"c.1500 BC",desc:"Moses leads Exodus",img:"https://source.unsplash.com/400x200/?moses,bible"},
-    {year:"c.1000 BC",desc:"King David reigns",img:"https://source.unsplash.com/400x200/?kingdavid,bible"},
-    {year:"c.950 BC",desc:"Solomon builds temple",img:"https://source.unsplash.com/400x200/?solomon,bible"},
-    {year:"c.722 BC",desc:"Fall of Israel",img:"https://source.unsplash.com/400x200/?israel,bible"},
-    {year:"c.586 BC",desc:"Babylonian exile",img:"https://source.unsplash.com/400x200/?babylon,bible"},
-    {year:"c.4 BC",desc:"Birth of Jesus",img:"https://source.unsplash.com/400x200/?jesus,bible"},
-    {year:"c.70 AD",desc:"Destruction of Jerusalem Temple",img:"https://source.unsplash.com/400x200/?jerusalem,bible"}
+    {year:"c.2000 BC",desc:"Abraham's era",img:"https://cdn.britannica.com/49/11349-050-D840C981/Abraham-Driving-Out-Hagar-oil-canvas-Ishmael.jpg"},
+    {year:"c.1500 BC",desc:"Moses leads Exodus",img:"https://www.worldhistory.org/img/r/p/500x600/5739.jpg?v=1739640787"},
+    {year:"c.1000 BC",desc:"King David reigns",img:"https://africame.factsanddetails.com/archives/001/202310/e34491587532bfe8.jpg"},
+    {year:"c.950 BC",desc:"Solomon builds temple",img:"https://www.myjewishlearning.com/wp-content/uploads/2003/07/The_Visit_of_the_Queen_of_Sheba_to_King_Solomon_oil_on_canvas_painting_by_Edward_Poynter_1890_Art_Gallery_of_New_South_Wales.jpg"},
+    {year:"c.722 BC",desc:"Fall of Israel",img:"https://images.squarespace-cdn.com/content/v1/56c13cc00442627a08632989/1600468817930-V5H7WBV25TL9QFOYPCVP/fallofsamariadonlawrence.jpg"},
+    {year:"c.586 BC",desc:"Babylonian exile",img:"https://upload.wikimedia.org/wikipedia/commons/8/8f/Tissot_The_Flight_of_the_Prisoners.jpg"},
+    {year:"c.4 BC",desc:"Birth of Jesus",img:"https://miro.medium.com/v2/resize:fit:1200/0*SbRCTWXTkM1hV11a.jpg"},
+    {year:"c.70 AD",desc:"Destruction of Jerusalem Temple",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThQz3mdSKD5_2I0HaTnH4ZXV2mopfBQRJKLw&s"}
   ], 
   ww1: [
-    {year:"1914",desc:"Assassination of Archduke Franz Ferdinand",img:"https://source.unsplash.com/400x200/?ww1,1914"},
-    {year:"1915",desc:"Second Battle of Ypres",img:"https://source.unsplash.com/400x200/?ww1,1915"},
-    {year:"1916",desc:"Battle of the Somme",img:"https://source.unsplash.com/400x200/?ww1,1916"},
-    {year:"1917",desc:"US enters the war",img:"https://source.unsplash.com/400x200/?ww1,1917"},
-    {year:"1918",desc:"Armistice signed",img:"https://source.unsplash.com/400x200/?ww1,1918"},
-    {year:"1919",desc:"Treaty of Versailles",img:"https://source.unsplash.com/400x200/?ww1,1919"},
-    {year:"1920",desc:"League of Nations established",img:"https://source.unsplash.com/400x200/?leagueofnations,ww1"},
-    {year:"1921",desc:"War reparations imposed on Germany",img:"https://source.unsplash.com/400x200/?germany,ww1"}
+    {year:"1914",desc:"Assassination of Archduke Franz Ferdinand",img:"https://res.cloudinary.com/aenetworks/image/upload/c_fill,w_1200,h_630,g_auto/dpr_auto/f_auto/q_auto:eco/v1/outbreak-of-world-war-i-gettyimages-506127736"},
+    {year:"1915",desc:"Second Battle of Ypres",img:"https://www.bpmcdn.com/f/files/langley/import/2017-04/43234langleyYpresSecondBattleJackPainting.jpg;w=700"},
+    {year:"1916",desc:"Battle of the Somme",img:"https://defenceindepth.co/wp-content/uploads/2016/06/large-11.jpg?w=800&h=400&crop=1"},
+    {year:"1917",desc:"US enters the war",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDmP91jMH8RplrlUi8s_aI0airPkDhRMMUoQ&s"},
+    {year:"1918",desc:"Armistice signed",img:"https://cdn.britannica.com/18/197018-050-C91372BC/armistice-officials-Allied-German-signing-fighting-World-November-11-1918.jpg"},
+    {year:"1919",desc:"Treaty of Versailles",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS04xqAmzmFsEi1kzBQRrN0OxQgv0P9xoMvQ&s"},
+    {year:"1920",desc:"League of Nations established",img:"https://www.thoughtco.com/thmb/tVCNiwpvD3LAjMzAWiN4THXH4ZY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/leagueofnations-7e9e88fdfb5240a9b3cf08eeda8d3fd1.png"},
+    {year:"1921",desc:"War reparations imposed on Germany",img:"https://cdn.mos.cms.futurecdn.net/ikDh5gMfsqYADqB8pRdFP6.jpg"}
   ], 
   ww2: [
-    {year:"1939",desc:"Germany invades Poland",img:"https://source.unsplash.com/400x200/?ww2,1939"},
-    {year:"1940",desc:"Fall of France",img:"https://source.unsplash.com/400x200/?ww2,1940"},
-    {year:"1941",desc:"Pearl Harbor attack",img:"https://source.unsplash.com/400x200/?ww2,1941"},
-    {year:"1942",desc:"Battle of Midway",img:"https://source.unsplash.com/400x200/?ww2,1942"},
-    {year:"1944",desc:"D-Day Normandy landings",img:"https://source.unsplash.com/400x200/?ww2,1944"},
-    {year:"1945",desc:"Germany surrenders",img:"https://source.unsplash.com/400x200/?ww2,1945a"},
-    {year:"1945",desc:"Atomic bombs on Hiroshima and Nagasaki",img:"https://source.unsplash.com/400x200/?ww2,1945b"},
-    {year:"1946",desc:"United Nations founded",img:"https://source.unsplash.com/400x200/?unitednations,ww2"}
+    {year:"1939",desc:"Germany invades Poland",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuxxNlwoILJhGclAUdQDtUVa40fRdRJTjqdw&s"},
+    {year:"1940",desc:"Fall of France",img:"https://cdn.britannica.com/78/177078-050-EFCF854A/Adolf-Hitler-front-Paris-Eiffel-Tower-France-June-1940.jpg?w=500&h=500"},
+    {year:"1941",desc:"Pearl Harbor attack",img:"https://cdn.britannica.com/81/71381-050-0042470B/battleship-attack-Pearl-Harbor-Japanese-Hawaii-December-7-1941.jpg"},
+    {year:"1942",desc:"Battle of Midway",img:"https://upload.wikimedia.org/wikipedia/commons/b/bb/USS_Yorktown_%28CV-5%29_is_hit_by_a_torpedo_on_4_June_1942.jpg"},
+    {year:"1944",desc:"D-Day Normandy landings",img:"https://upload.wikimedia.org/wikipedia/commons/a/a5/Into_the_Jaws_of_Death_23-0455M_edit.jpg"},
+    {year:"1945",desc:"Germany surrenders",img:"https://ogden_images.s3.amazonaws.com/www.lockhaven.com/images/2020/05/07164822/express-VE-1100x733.jpg"},
+    {year:"1945",desc:"Atomic bombs on Hiroshima and Nagasaki",img:"https://upload.wikimedia.org/wikipedia/commons/5/54/Atomic_bombing_of_Japan.jpg"},
+    {year:"1946",desc:"United Nations founded",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQRJSI6AqfIjOgKNDSDUQ-eTk5EEE_8tc5oA&s"}
   ],
   jesus: [
-    {year:"c.4 BC",desc:"Birth of Jesus in Bethlehem",img:"https://source.unsplash.com/400x200/?jesus,birth"},
-    {year:"c.6 AD",desc:"Jesus' family flees to Egypt",img:"https://source.unsplash.com/400x200/?jesus,egypt"},
-    {year:"c.26 AD",desc:"Jesus begins his ministry",img:"https://source.unsplash.com/400x200/?jesus,ministry"},
-    {year:"c.30 AD",desc:"Crucifixion of Jesus",img:"https://source.unsplash.com/400x200/?jesus,crucifixion"},
-    {year:"c.30 AD",desc:"Resurrection of Jesus",img:"https://source.unsplash.com/400x200/?jesus,resurrection"},
-    {year:"c.33 AD",desc:"Ascension of Jesus",img:"https://source.unsplash.com/400x200/?jesus,ascension"},
-    {year:"c.50 AD",desc:"Paul's missionary journeys",img:"https://source.unsplash.com/400x200/?paul,missionary"},
-    {year:"c.70 AD",desc:"Destruction of Jerusalem Temple",img:"https://source.unsplash.com/400x200/?jerusalem,temple"}
-  ],
-  earth: [
-    {year:"c.4.5 billion years ago",desc:"Formation of Earth",img:"https://source.unsplash.com/400x200/?earth,formation"},
-    {year:"c.3.5 billion years ago",desc:"First life forms appear",img:"https://source.unsplash.com/400x200/?earth,life"},
-    {year:"c.600 million years ago",desc:"Cambrian Explosion",img:"https://source.unsplash.com/400x200/?cambrian,explosion"},
-    {year:"c.250 million years ago",desc:"Permian-Triassic extinction",img:"https://source.unsplash.com/400x200/?extinction,event"},
-    {year:"c.65 million years ago",desc:"Dinosaur extinction",img:"https://source.unsplash.com/400x200/?dinosaur,extinction"},
-    {year:"c.2 million years ago",desc:"First humans appear",img:"https://source.unsplash.com/400x200/?earlyhumans,earth"},
-    {year:"c.10,000 years ago",desc:"Agricultural revolution",img:"https://source.unsplash.com/400x200/?agriculture,revolution"},
-    {year:"c.200 years ago",desc:"Industrial revolution begins",img:"https://source.unsplash.com/400x200/?industrial,revolution"}
+    {year:"c.4 BC",desc:"Birth of Jesus in Bethlehem",img:"https://media.swncdn.com/cms/BST/29980-12349-Nativity_BirthJesus.1200w.tn.1200w.tn.jpg"},
+    {year:"c.6 AD",desc:"Jesus' family flees to Egypt",img:"https://images.squarespace-cdn.com/content/v1/5f56423f4aca615934476295/ffd7a86b-9033-4f12-8a54-bcbbefedef44/holy-family-flight-to-egypt-04.png"},
+    {year:"c.26 AD",desc:"Jesus begins his ministry",img:"https://www.psephizo.com/wp-content/uploads/2021/07/00.159.90_PS1.jpg"},
+    {year:"c.30 AD",desc:"Crucifixion of Jesus",img:"https://upload.wikimedia.org/wikipedia/commons/8/84/Titian_-_The_Crucifixion_of_Christ_-_109_-_Pinacoteca_civica_%22Francesco_Podesti%22.jpg"},
+    {year:"c.30 AD",desc:"Resurrection of Jesus",img:"https://celestialsaintstudio.com/cdn/shop/files/il_fullxfull.5921702123_3w8k.jpg?v=1724086058"},
+    {year:"c.33 AD",desc:"Ascension of Jesus",img:"https://upload.wikimedia.org/wikipedia/commons/8/85/Jesus_ascending_to_heaven.jpg"},
+    {year:"c.50 AD",desc:"Paul's missionary journeys",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGGM3Ye40dvs36afLOyNpTK6t4FlTiGlr68g&s"},
+    {year:"c.70 AD",desc:"Destruction of Jerusalem Temple",img:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/%28Venice%29_La_distruzione_del_tempio_di_Gerusalemme_-Francesco_Hayez_-_gallerie_Accademia_Venice.jpg/330px-%28Venice%29_La_distruzione_del_tempio_di_Gerusalemme_-Francesco_Hayez_-_gallerie_Accademia_Venice.jpg"}
   ],
   digital: [
-    {year:"1940s",desc:"Development of first computers",img:"https://source.unsplash.com/400x200/?early,computers"},
-    {year:"1969",desc:"ARPANET established",img:"https://source.unsplash.com/400x200/?arpanet,internet"},
-    {year:"1971",desc:"Invention of the microprocessor",img:"https://source.unsplash.com/400x200/?microprocessor,technology"},
-    {year:"1983",desc:"Domain Name System (DNS) created",img:"https://source.unsplash.com/400x200/?dns,internet"},
-    {year:"1991",desc:"World Wide Web launched",img:"https://source.unsplash.com/400x200/?worldwideweb,internet"},
+    {year:"1940s",desc:"Development of first computers",img:"https://upload.wikimedia.org/wikipedia/commons/0/0c/ENIAC-changing_a_tube_%28cropped%29.jpg"},
+    {year:"1969",desc:"ARPANET established",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP-Wqhhun5BS0xbazzgfX-Di6lvuXWya9x5A&s"},
+    {year:"1971",desc:"Invention of the microprocessor",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNCJXTa28-eeIYa9AS_d--2xQQvtvIOtAWyw&s"},
+    {year:"1983",desc:"Domain Name System (DNS) created",img:"https://kinsta.com/wp-content/uploads/2018/05/what-is-dns-1024x512.png"},
+    {year:"1991",desc:"World Wide Web launched",img:"https://disenowebakus.net/en/images/articles/world-wide-web-www-meaning-history-origin.jpg"},
     {year:"2004",desc:"Facebook founded",img:"https://source.unsplash.com/400x200/?facebook,socialmedia"},
-    {year:"2007",desc:"iPhone released",img:"https://source.unsplash.com/400x200/?iphone,technology"},  
-    {year:"2010s",desc:"Rise of cloud computing",img:"https://source.unsplash.com/400x200/?cloud,computing"}
+    {year:"2007",desc:"iPhone released",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_ybKcyfCva_MihsMuEKUcxPdogjvPM30OwA&s"},  
+    {year:"2010s",desc:"Rise of cloud computing",img:"https://bernardmarr.com/img/The%205%20Biggest%20Cloud%20Computing%20Trends%20In%202021.jpg"}
   ],
   industrial: [
-    {year:"1760s",desc:"Start of the Industrial Revolution",img:"https://source.unsplash.com/400x200/?industrial,revolution1"},
-    {year:"1784",desc:"Invention of the power loom",img:"https://source.unsplash.com/400x200/?powerloom,industrial"},
-    {year:"1807",desc:"First successful steamboat",img:"https://source.unsplash.com/400x200/?steamboat,industrial"},
-    {year:"1837",desc:"Invention of the telegraph",img:"https://source.unsplash.com/400x200/?telegraph,industrial"},
-    {year:"1870",desc:"Start of the Second Industrial Revolution",img:"https://source.unsplash.com/400x200/?industrial,revolution2"},
-    {year:"1913",desc:"Introduction of assembly line production",img:"https://source.unsplash.com/400x200/?assembly,line,industrial"}, 
-    {year:"1920s",desc:"Mass production of automobiles",img:"https://source.unsplash.com/400x200/?automobile,industrial"},
-    {year:"1940s",desc:"Advancements in manufacturing during WWII",img:"https://source.unsplash.com/400x200/?ww2,manufacturing"}    
+    {year:"1760s",desc:"Start of the Industrial Revolution",img:"https://s.wsj.net/public/resources/images/BA-BH187_Long_G_20150212185304.jpg"},
+    {year:"1784",desc:"Invention of the power loom",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZC4ZOjqQRNne9JcYxBy1xrsymmNrBnnw2LQ&s"},
+    {year:"1807",desc:"First successful steamboat",img:"https://upload.wikimedia.org/wikipedia/commons/c/ca/%22Look_out%22_%28Transport_Steamer%29_on_Tennessee_River_-_NARA_-_5289791_restored.jpg"},
+    {year:"1837",desc:"Invention of the telegraph",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQThQW8P91xxWEj_Tv4iYaFidgOhBUC_1RwCg&s"},
+    {year:"1870",desc:"Start of the Second Industrial Revolution",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9eycDO9UsmkDZyjeRWMaNioNMC1f8fGj93A&s"},
+    {year:"1913",desc:"Introduction of assembly line production",img:"https://cdn.britannica.com/65/94665-050-14966234/welding-automobile-assembly-line-Japan-Toyota-Motor.jpg"}, 
+    {year:"1920s",desc:"Mass production of automobiles",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdNwwq69v_reJ1DWC8Tk3OjsKV-Ns-K--VJQ&s"},
+    {year:"1940s",desc:"Advancements in manufacturing during WWII",img:"https://www.rssinc.com/wp-content/uploads/2022/07/production-workers-needed.jpeg"}    
   ], 
   vietnam: [
-    {year:"1955",desc:"Start of Vietnam War",img:"https://source.unsplash.com/400x200/?vietnam,war1"},
-    {year:"1964",desc:"Gulf of Tonkin incident",img:"https://source.unsplash.com/400x200/?gulfoftonkin,vietnam"},
-    {year:"1968",desc:"Tet Offensive",img:"https://source.unsplash.com/400x200/?tetoffensive,vietnam"},
-    {year:"1970",desc:"Cambodia invasion",img:"https://source.unsplash.com/400x200/?cambodia,vietnam"},
-    {year:"1973",desc:"Paris Peace Accords signed",img:"https://source.unsplash.com/400x200/?parispeace,vietnam"},
-    {year:"1975",desc:"Fall of Saigon",img:"https://source.unsplash.com/400x200/?saigon,vietnam"},
-    {year:"1986",desc:"Economic reforms (Đổi Mới)",img:"https://source.unsplash.com/400x200/?economicreform,vietnam"},
-    {year:"1995",desc:"US-Vietnam diplomatic relations restored",img:"https://source.unsplash.com/400x200/?usvietnam,diplomacy"}
+    {year:"1955",desc:"Start of Vietnam War",img:"https://cdn.theatlantic.com/media/img/photo/2015/03/the-vietnam-war-part-i-early-years/v01_AP6503010453-1/original.jpg"},
+    {year:"1964",desc:"Gulf of Tonkin incident",img:"https://upload.wikimedia.org/wikipedia/commons/6/67/U.S._Army_UH-1H_Hueys_insert_ARVN_troops_at_Kh%C3%A2m_%C4%90%E1%BB%A9c%2C_Vietnam%2C_12_July_1970_%2879431435%29.jpg"},
+    {year:"1968",desc:"Tet Offensive",img:"https://www.vassar.edu/sites/default/files/2025-03/6-sp4-jerry-horgrewe-photographs-arvn-troops-delta.jpg"},
+    {year:"1970",desc:"Cambodia invasion",img:"https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/I7XOE3EJPUI6VAG72JFTLJLIVY.jpg"},
+    {year:"1973",desc:"Paris Peace Accords signed",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRxQgNrYKNyebj-LR5PWzUbgDqtwssu_v7Ag&s"},
+    {year:"1975",desc:"Fall of Saigon",img:"https://npr.brightspotcdn.com/dims3/default/strip/false/crop/3600x2529+0+0/resize/1100/quality/50/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F56%2F64%2F0f3d01f74548b130d1e4da27b1b2%2Fap240696015305.jpg"},
+    {year:"1986",desc:"Economic reforms (Đổi Mới)",img:"https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i_IKpk9L_5jI/v1/-1x-1.webp"},
+    {year:"1995",desc:"US-Vietnam diplomatic relations restored",img:"https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_3840,h_1920,g_auto/dpr_auto/f_auto/q_auto:eco/v1/vietnam-war-gettyimages-615208290?_a=BAVAZGID0"}
   ], 
   korean: [
-    {year:"1950",desc:"Start of Korean War",img:"https://source.unsplash.com/400x200/?korean,war1"},
-    {year:"1950",desc:"North Korea invades South Korea",img:"https://source.unsplash.com/400x200/?northkorea,southkorea"},
-    {year:"1951",desc:"Chinese forces enter the war",img:"https://source.unsplash.com/400x200/?china,koreanwar"},
-    {year:"1953",desc:"Armistice signed",img:"https://source.unsplash.com/400x200/?koreanwar,armistice"},
-    {year:"1960s",desc:"South Korea's economic development",img:"https://source.unsplash.com/400x200/?southkorea,economy"},
-    {year:"1988",desc:"Seoul hosts Summer Olympics",img:"https://source.unsplash.com/400x200/?seoul,olympics"},
-    {year:"1998",desc:"Kim Dae-jung elected president",img:"https://source.unsplash.com/400x200/?kimdaejung,southkorea"},
-    {year:"2000",desc:"First Inter-Korean Summit",img:"https://source.unsplash.com/400x200/?interkorean,summit"}
+    {year:"1950",desc:"Start of Korean War",img:"https://upload.wikimedia.org/wikipedia/commons/7/7b/Chosin.jpg"},
+    {year:"1950",desc:"North Korea invades South Korea",img:"https://images.theconversation.com/files/169236/original/file-20170514-3689-15nyxup.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=1000&fit=clip"},
+    {year:"1951",desc:"Chinese forces enter the war",img:"https://i.guim.co.uk/img/media/c6a5e8f9d1d6461cdf88a5907c6278509503a697/0_159_3450_2071/master/3450.jpg?width=465&dpr=1&s=none&crop=none"},
+    {year:"1953",desc:"Armistice signed",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZdzbsWPTHH_dugBaSgbUjIVYJmXZ5wtkjsw&s"},
+    {year:"1960s",desc:"South Korea's economic development",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVZXbceDIvgKpR0CLUsARXRhlZR3Tm-4LbVg&s"},
+    {year:"1988",desc:"Seoul hosts Summer Olympics",img:"https://s1.it.atcdn.net/wp-content/uploads/2020/02/Seoul-korea-hero.jpg"},
+    {year:"1998",desc:"Kim Dae-jung elected president",img:"https://cdn.britannica.com/07/126007-050-1E64D3CD/Kim-Dae-Jung-2000.jpg"},
+    {year:"2000",desc:"First Inter-Korean Summit",img:"https://upload.wikimedia.org/wikipedia/commons/4/46/2018_inter-Korean_summit_01.jpg"}
   ],
-  british: [
-    {year:"1607",desc:"Jamestown founded",img:"https://source.unsplash.com/400x200/?jamestown,british"},
-    {year:"1620",desc:"Pilgrims land at Plymouth",img:"https://source.unsplash.com/400x200/?plymouth,british"},
-    {year:"1757",desc:"Battle of Plassey",img:"https://source.unsplash.com/400x200/?plassey,british"},
-    {year:"1776",desc:"American Declaration of Independence",img:"https://source.unsplash.com/400x200/?declarationofindependence,british"},
-    {year:"1805",desc:"Battle of Trafalgar",img:"https://source.unsplash.com/400x200/?trafalgar,british"},
-    {year:"1837",desc:"Victoria becomes queen",img:"https://source.unsplash.com/400x200/?queen,victoria"},
-    {year:"1914",desc:"Start of World War I",img:"https://source.unsplash.com/400x200/?ww1,british"},
-    {year:"1945",desc:"End of World War II",img:"https://source.unsplash.com/400x200/?ww2,british"}
-  ],    
-    myanmar: [
-        {year:"1824",desc:"First Anglo-Burmese War begins",img:"https://source.unsplash.com/400x200/?angloburmese,war1"},
-        {year:"1826",desc:"Treaty of Yandabo signed",img:"https://source.unsplash.com/400x200/?yandabo,treaty"},
-        {year:"1852",desc:"Second Anglo-Burmese War",img:"https://source.unsplash.com/400x200/?angloburmese,war2"},
-        {year:"1885",desc:"Third Anglo-Burmese War",img:"https://source.unsplash.com/400x200/?angloburmese,war3"},
-        {year:"1948",desc:"Independence from Britain",img:"https://source.unsplash.com/400x200/?myanmar,independence"},
-        {year:"1962",desc:"Military coup in Myanmar",img:"https://source.unsplash.com/400x200/?myanmar,coup"},
-        {year:"2011",desc:"Start of political reforms",img:"https://source.unsplash.com/400x200/?myanmar,reforms"},
-        {year:"2021",desc:"Military coup d'état",img:"https://source.unsplash.com/400x200/?myanmar,coup2021"}
-    ], 
+ 
 
 
-  // You can continue adding the remaining timelines in the same format (jesus, earth, digital, industrial, ww1, ww2, vietnam, korean, british, myanmar)
+  // You can continue adding the remaining timelines in the same format (jesus, digital, industrial, ww1, ww2, vietnam, korean,)
 };
 
 const colors = {
   crusades:'crusades', us:'us', apple:'apple', bible:'bible', jesus:'jesus',
-  earth:'earth', digital:'digital', industrial:'industrial',
-  ww1:'ww1', ww2:'ww2', vietnam:'vietnam', korean:'korean', british:'british', myanmar:'myanmar'
+  digital:'digital', industrial:'industrial',
+  ww1:'ww1', ww2:'ww2', vietnam:'vietnam', korean:'korean',
 };
 
 const timelinesContainer = document.getElementById("timelines-container");
